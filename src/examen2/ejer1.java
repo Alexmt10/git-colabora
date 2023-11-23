@@ -6,6 +6,7 @@ public class ejer1 {
 
 	public static void main(String[] args) {
 		
+		//esto son variables
 		var sc = new Scanner(System.in);
 		char seguir = 's';
 		int num1 = 0;
@@ -16,9 +17,9 @@ public class ejer1 {
 		int produc1 = 0;
 		int produc2 = 0;
 		
-		
+		//esto es un bucle
 		while (seguir == 's') {
-		
+		//esto es un syso
 		System.out.println("Introduce un número de 4 cifras");
 		 num1 = sc.nextInt();
 		
