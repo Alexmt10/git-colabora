@@ -1,3 +1,3 @@
 # git-colabora
-# ejercicio de clase
-## Algunas cosas
+# Prueba2
+## Se ha modificado el ejercicio 1.
