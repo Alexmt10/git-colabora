@@ -5,57 +5,48 @@ import java.util.Scanner;
 public class ejer1 {
 
 	public static void main(String[] args) {
-		
 		var sc = new Scanner(System.in);
-		char seguir = 's';
-		int num1 = 0;
-		int num2 = 0;
-		int num3 = 0;
-		int num4 = 0;
-		int num5 = 0;
-		int produc1 = 0;
-		int produc2 = 0;
-		
-		
-		while (seguir == 's') {
-		
-		System.out.println("Introduce un número de 4 cifras");
-		 num1 = sc.nextInt();
-		
-		System.out.println("Introduce el primer dígito");
-		 num2 = sc.nextInt();
-		
-		System.out.println("Introduce el segundo dígito");
-		 num3 = sc.nextInt();
-				
-		System.out.println("Introduce el tercer dígito");
-		 num4 = sc.nextInt();
-		
-		System.out.println("Introduce el cuarto dígito");
-		 num5 = sc.nextInt();
-		 
-		 produc1 = num2*num3;
-		 produc2 = num4*num5;
-		 
-		 
-		 //Agrupamos los dos primeros digitos y los dos ultimos y decimos cual producto es mayor
-		 if (produc1 > produc2) {
-			 
-			 System.out.println("El producto de las 2 primeras cifras "+ produc1 + " es mayor que el de la 2 ultimas "+ produc2);
-			 
-		 }
-		 
-		 else {
-				
-				 System.out.println("El producto de las 2 ultimas cifras "+produc2+ " es mayor que el de las 2 primeras "+ produc1);	 
-		 
-		 }
-		
-		 System.out.println("Deseas seguir 's' si 'n' no");
-		 seguir = sc.next().charAt(0);
+		boolean condicion = false;
+		while (condicion == false) {
+			System.out.println("Introduzca un numero entero de 4 cifras");
+			int numeroPedido = sc.nextInt(), unidad, decena, centena, millar, operacionUD, operacionCM,
+					numeroRepetir = 0;
+			unidad = numeroPedido % 10;
+			numeroPedido = numeroPedido / 10;
+			System.out.println(unidad);
+			decena = numeroPedido % 10;
+			numeroPedido = numeroPedido / 10;
+			System.out.println(decena);
+			centena = numeroPedido % 10;
+			numeroPedido = numeroPedido / 10;
+			System.out.println(centena);
+			millar = numeroPedido % 10;
+			numeroPedido = numeroPedido / 10;
+			System.out.println(millar);
+
+			operacionUD = unidad * decena;
+			operacionCM = centena * millar;
+			System.out.println("El producto de unidades y decenas es :" + operacionUD);
+			System.out.println("El producto de centenas y millares es : " + operacionCM);
+
+			if (operacionUD > operacionCM) {
+				System.out.println("El producto de unidades y decenas es mayor que el de centenas y millares");
+			} else if (operacionUD < operacionCM) {
+				System.out.println("El producto de centenas y millares es mayor que el de unidades y decenas");
+			} else {
+				System.out.println("Los productos son iguales");
+			}
+			System.out.println("Introduzca 1 si quiere introducir otro numero, si no pulsa otro numero");
+			numeroRepetir = sc.nextInt();
+			if (numeroRepetir == 1) {
+				condicion = false;
+			} else {
+				condicion = true;
+				System.out.println("Ha ingresado un numero distinto de uno el programa se cerrara, gracias.");
+			}
+
 		}
-		
-		
 		sc.close();
 	}
+
 }
